@@ -22,9 +22,7 @@ class _qrappState extends State<qrapp> {
     super.initState();
     pdf.addPage(
       pw.Page(
-        pageFormat: PdfPageFormat(58, 40),
-        // orientation: pw.PageOrientation.natural,
-
+        pageFormat: PdfPageFormat.roll57,
         build: (context) {
           return pw.Stack(
             children: [
@@ -36,30 +34,30 @@ class _qrappState extends State<qrapp> {
               pw.Row(
                 children: [
                   pw.Transform.translate(
-                    offset: PdfPoint(-5, -13.5),
+                    offset: PdfPoint(20, -19.5),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
                         "QAZAX UCUZLUQ",
                         style: pw.TextStyle(
-                          fontSize: 2,
+                          fontSize: 6,
                         ),
                       ),
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-19, -15),
+                    offset: PdfPoint(-15, -25),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Container(
-                        height: 7,
-                        width: 20,
+                        height: 34,
+                        width: 60,
                         child: pw.Container(
                           child: pw.BarcodeWidget(
                             barcode: pw.Barcode.ean13(),
                             data: "8690605031404",
                             textStyle: pw.TextStyle(
-                              fontSize: 2.2,
+                              fontSize: 6,
                               fontWeight: pw.FontWeight.bold,
                             ),
                           ),
@@ -68,25 +66,25 @@ class _qrappState extends State<qrapp> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-32, -15),
+                    offset: PdfPoint(-47, -23),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
                         "Vanna Sobahan",
                         style: pw.TextStyle(
-                          fontSize: 2,
+                          fontSize: 6,
                         ),
                       ),
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-46, -15),
+                    offset: PdfPoint(-85, -25),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
                         "3.40        AZN",
                         style: pw.TextStyle(
-                          fontSize: 3,
+                          fontSize: 8,
                           fontWeight: pw.FontWeight.bold,
                         ),
                       ),
@@ -94,146 +92,146 @@ class _qrappState extends State<qrapp> {
                   ),
                 ],
               ),
-              pw.Stack(
-                children: [
-                  pw.Container(
-                    //color: PdfColors.pink,
-                    height: double.infinity,
-                    width: double.infinity,
-                  ),
-                  pw.Row(
-                    children: [
-                      pw.Transform.translate(
-                        offset: PdfPoint(10, -13.5),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "QAZAX UCUZLUQ",
-                            style: pw.TextStyle(
-                              fontSize: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      pw.Transform.translate(
-                        offset: PdfPoint(-4, -15),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Container(
-                            height: 7,
-                            width: 20,
-                            child: pw.Container(
-                              child: pw.BarcodeWidget(
-                                barcode: pw.Barcode.ean13(),
-                                data: "8690605031404",
-                                textStyle: pw.TextStyle(
-                                  fontSize: 2.2,
-                                  fontWeight: pw.FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      pw.Transform.translate(
-                        offset: PdfPoint(-17, -15),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "Vanna Sobahan",
-                            style: pw.TextStyle(
-                              fontSize: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      pw.Transform.translate(
-                        offset: PdfPoint(-31, -15),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "3.40        AZN",
-                            style: pw.TextStyle(
-                              fontSize: 3,
-                              fontWeight: pw.FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              pw.Stack(
-                children: [
-                  pw.Container(
-                    //  color: PdfColors.pink,
-                    height: double.infinity,
-                    width: double.infinity,
-                  ),
-                  pw.Row(
-                    children: [
-                      pw.Transform.translate(
-                        offset: PdfPoint(25, -13.5),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "QAZAX UCUZLUQ",
-                            style: pw.TextStyle(
-                              fontSize: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      pw.Transform.translate(
-                        offset: PdfPoint(11, -15),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Container(
-                            height: 7,
-                            width: 20,
-                            child: pw.Container(
-                              child: pw.BarcodeWidget(
-                                barcode: pw.Barcode.ean13(),
-                                data: "8690605031404",
-                                textStyle: pw.TextStyle(
-                                  fontSize: 2.2,
-                                  fontWeight: pw.FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      pw.Transform.translate(
-                        offset: PdfPoint(-2, -15),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "Vanna Sobahan",
-                            style: pw.TextStyle(
-                              fontSize: 2,
-                            ),
-                          ),
-                        ),
-                      ),
-                      pw.Transform.translate(
-                        offset: PdfPoint(-16, -15),
-                        child: pw.Transform.rotate(
-                          angle: pi / 2,
-                          child: pw.Text(
-                            "3.40        AZN",
-                            style: pw.TextStyle(
-                              fontSize: 3,
-                              fontWeight: pw.FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+              // pw.Stack(
+              //   children: [
+              //     pw.Container(
+              //       //color: PdfColors.pink,
+              //       height: double.infinity,
+              //       width: double.infinity,
+              //     ),
+              //     pw.Row(
+              //       children: [
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(10, -13.5),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Text(
+              //               "QAZAX UCUZLUQ",
+              //               style: pw.TextStyle(
+              //                 fontSize: 2,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(-4, -15),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Container(
+              //               height: 7,
+              //               width: 20,
+              //               child: pw.Container(
+              //                 child: pw.BarcodeWidget(
+              //                   barcode: pw.Barcode.ean13(),
+              //                   data: "8690605031404",
+              //                   textStyle: pw.TextStyle(
+              //                     fontSize: 2.2,
+              //                     fontWeight: pw.FontWeight.bold,
+              //                   ),
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(-17, -15),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Text(
+              //               "Vanna Sobahan",
+              //               style: pw.TextStyle(
+              //                 fontSize: 2,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(-31, -15),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Text(
+              //               "3.40        AZN",
+              //               style: pw.TextStyle(
+              //                 fontSize: 3,
+              //                 fontWeight: pw.FontWeight.bold,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
+              // pw.Stack(
+              //   children: [
+              //     pw.Container(
+              //       //  color: PdfColors.pink,
+              //       height: double.infinity,
+              //       width: double.infinity,
+              //     ),
+              //     pw.Row(
+              //       children: [
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(25, -13.5),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Text(
+              //               "QAZAX UCUZLUQ",
+              //               style: pw.TextStyle(
+              //                 fontSize: 2,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(11, -15),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Container(
+              //               height: 7,
+              //               width: 20,
+              //               child: pw.Container(
+              //                 child: pw.BarcodeWidget(
+              //                   barcode: pw.Barcode.ean13(),
+              //                   data: "8690605031404",
+              //                   textStyle: pw.TextStyle(
+              //                     fontSize: 2.2,
+              //                     fontWeight: pw.FontWeight.bold,
+              //                   ),
+              //                 ),
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(-2, -15),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Text(
+              //               "Vanna Sobahan",
+              //               style: pw.TextStyle(
+              //                 fontSize: 2,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //         pw.Transform.translate(
+              //           offset: PdfPoint(-16, -15),
+              //           child: pw.Transform.rotate(
+              //             angle: pi / 2,
+              //             child: pw.Text(
+              //               "3.40        AZN",
+              //               style: pw.TextStyle(
+              //                 fontSize: 3,
+              //                 fontWeight: pw.FontWeight.bold,
+              //               ),
+              //             ),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ],
+              // ),
             ],
           );
         },
