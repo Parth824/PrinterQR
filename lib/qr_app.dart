@@ -27,14 +27,14 @@ class _qrappState extends State<qrapp> {
           return pw.Stack(
             children: [
               pw.Container(
-                //color: PdfColors.yellow,
+               // color: PdfColors.yellow,
                 height: double.infinity,
                 width: double.infinity,
               ),
               pw.Row(
                 children: [
                   pw.Transform.translate(
-                    offset: PdfPoint(20, -19.5),
+                    offset: PdfPoint(-22, -14.5),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
@@ -46,7 +46,7 @@ class _qrappState extends State<qrapp> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-15, -25),
+                    offset: PdfPoint(-56, -20),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Container(
@@ -66,7 +66,7 @@ class _qrappState extends State<qrapp> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-47, -23),
+                    offset: PdfPoint(-88, -18),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
@@ -78,7 +78,7 @@ class _qrappState extends State<qrapp> {
                     ),
                   ),
                   pw.Transform.translate(
-                    offset: PdfPoint(-85, -25),
+                    offset: PdfPoint(-128, -20),
                     child: pw.Transform.rotate(
                       angle: pi / 2,
                       child: pw.Text(
@@ -92,7 +92,50 @@ class _qrappState extends State<qrapp> {
                   ),
                 ],
               ),
-              // pw.Stack(
+              
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Networking Printer..."),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          Uint8List data = await pdf.save();
+          await Printing.layoutPdf(
+            onLayout: (format) => data,
+          );
+        },
+        child: Icon(Icons.download),
+      ),
+      body: Center(
+        child: Container(
+          height: 200,
+          child: SfBarcodeGenerator(
+            value: "www.google.com",
+            symbology: QRCode(),
+            showValue: true,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+// pw.Stack(
               //   children: [
               //     pw.Container(
               //       //color: PdfColors.pink,
@@ -232,38 +275,3 @@ class _qrappState extends State<qrapp> {
               //     ),
               //   ],
               // ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Networking Printer..."),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          Uint8List data = await pdf.save();
-          await Printing.layoutPdf(
-            onLayout: (format) => data,
-          );
-        },
-        child: Icon(Icons.download),
-      ),
-      body: Center(
-        child: Container(
-          height: 200,
-          child: SfBarcodeGenerator(
-            value: "www.google.com",
-            symbology: QRCode(),
-            showValue: true,
-          ),
-        ),
-      ),
-    );
-  }
-}
